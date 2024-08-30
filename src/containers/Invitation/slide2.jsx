@@ -8,8 +8,9 @@ AOS.init();
 import weddingone from "../../assets/wedding1.png";
 import background1 from "../../assets/backgound1.png";
 import Clock from "../../containers/Clock/Clock";
+import dayjs from "dayjs";
 
-function Invitation() {
+function Invitation({ wedding, data }) {
   const [timerDays, setTimerDays] = useState(0);
   const [timerHours, setTimerHours] = useState(0);
   const [timerMinutes, setTimerMinutes] = useState(0);
@@ -49,16 +50,20 @@ function Invitation() {
     };
   }, []); // Kosongkan dependency array agar hanya berjalan sekali saat komponen mount
 
-  console.log("timer days", timerDays);
-  console.log("timer days", timerHours);
-  console.log("timer days", timerMinutes);
-  console.log("timer days", timerSeconds);
+  const formatTanggal = (dateString) => {
+    dayjs.locale("id"); // Set locale ke Bahasa Indonesia
+    return dayjs(dateString).format("dddd, DD MMMM YYYY");
+  };
+  // console.log("timer days", timerDays);
+  // console.log("timer days", timerHours);
+  // console.log("timer days", timerMinutes);
+  // console.log("timer days", timerSeconds);
   return (
     <>
       <div
         className="cardslide1"
         style={{
-          backgroundImage: `url(${background1})`,
+          backgroundImage: `url(${data.user.thems_image1})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -80,16 +85,16 @@ function Invitation() {
             <div style={{ width: "75%" }}>
               <h3
                 className="text-center description lh-1"
-                style={{ fontSize: 50 }}
+                style={{ fontSize: 35, marginBottom: 50 }}
               >
                 Save The Date
               </h3>
 
-              <p className="text-center fw-bold lh-1" style={{ fontSize: 25 }}>
-                Sabtu, 09 Desember 2023
+              <p className="text-center fw-bold lh-1" style={{ fontSize: 17 }}>
+                {formatTanggal(wedding.date)}
               </p>
             </div>
-            <a href="https://maps.app.goo.gl/NhAz6MHHmB6ZNNUi6">
+            <a href={wedding.address}>
               <Button className="btn-success mb-5">Buka Lokasi</Button>
             </a>
 

@@ -3,7 +3,7 @@ import './CountDown.css';
 
 const Clock = ({days, hours, minutes, seconds}) => {
 
-  console.log("ini days", days)
+  // console.log("ini days", days)
   return (
     <Fragment>
       <section className="timer-container">
