@@ -7,11 +7,12 @@ import { MdOutlineDateRange, MdOutlineMoreTime, MdOutlineSettings } from "react-
 import { LuMonitorCheck } from "react-icons/lu";
 import { GiSoundOn } from "react-icons/gi";
 import { LuGift } from "react-icons/lu";
+import Footer from "../../components/Footer";
 
 const index = () => {
   return (
     <>
-      <div className="bg-body-secondary" style={{ height: "100vh" }}>
+      <div className="bg-body-secondary" style={{height: "100vh"}}>
         <Navbar />
 
         <Container>
@@ -102,6 +103,7 @@ const index = () => {
     </Card>
           </div>
         </Container>
+        <Footer />
       </div>
     </>
   );

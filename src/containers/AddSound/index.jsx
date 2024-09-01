@@ -5,6 +5,7 @@ import "./FormAdd.css";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useRecipientStore from "../../store/useRecipientStore";
+import Footer from "../../components/Footer";
 
 const Index = () => {
   const { addThem } = useRecipientStore();
@@ -148,6 +149,7 @@ const Index = () => {
           </Form>
         </Container>
       </div>
+      <Footer />
     </>
   );
 };

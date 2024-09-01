@@ -3,7 +3,6 @@ import { Button, Card, Form } from "react-bootstrap";
 import "./invitation.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import background1 from "../../assets/backgound1.png";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import swal from "sweetalert";

@@ -10,6 +10,7 @@ const useRecipientStore = create((set, get) => ({
     thems: [],
     galeries: [],
     cards: [],
+    responses: [],
     errorMessage: '',
 
     setErrorMessage: (message) => set({ errorMessage: message }),
@@ -77,8 +78,7 @@ const useRecipientStore = create((set, get) => ({
     logout: () => {
         set({ user: null });
         localStorage.removeItem("token");
-        navigate("/")
-        window.location.reload();
+        // window.location.reload();
     },
 
 
@@ -218,6 +218,26 @@ const useRecipientStore = create((set, get) => ({
             console.log("Recipient updated successfully:", response.data);
             // Optionally, refetch the products to update the state
             get().fetchrecipients();
+        } catch (error) {
+            console.error("Update recipient error:", error);
+        }
+    },
+    updateRecipientStatus: async(id, recipientStatusData) => {
+        try {
+            const token = get().token;
+            if (!token) {
+                console.error("Token not found. Unable to update product.");
+                return;
+            }
+
+            const response = await axios.put(`http://localhost:3000/api/recipients/${id}/status`, recipientStatusData, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                },
+            });
+            console.log("Recipient updated successfully:", response.data);
+            // Optionally, refetch the products to update the state
+            get().fetchRecipients();
         } catch (error) {
             console.error("Update recipient error:", error);
         }

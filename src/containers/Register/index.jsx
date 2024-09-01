@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import useRecipientStore from "../../store/useRecipientStore";
 import { Link, useNavigate } from "react-router-dom";
 import "../Login/loginRegister.css";
@@ -31,9 +31,9 @@ const Register = () => {
  
 
   return (
-    <div className="body-loginreg">
-      <div className="login-container">
-        <h2 className="text-center" style={{ color: "#28a745" }}>
+    <div className="body-loginreg bg-body-secondary">
+      <div className="login-container bg-secondary">
+        <h2 className="text-center text-light">
           Register
         </h2>
         <form onSubmit={handleRegister}>
@@ -78,6 +78,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <p style={{fontSize: "0.7rem", textWrap: "wrap", lineHeight: "15px",}}>Password harus berisi minimal 8 karakter yang terdiri dari huruf kapital, huruf kecil, angka dan simbol</p>
           </div>
           <div className="mb-3">
             <label htmlFor="new-last-name" className="form-label">
@@ -98,7 +99,7 @@ const Register = () => {
             </button>
           </div>
           <div className="login-link">
-            <Link to="/login">Sudah punya akun? Login</Link>
+            <Link className="text-light" to="/login">Sudah punya akun? Login</Link>
           </div>
         </form>
       </div>

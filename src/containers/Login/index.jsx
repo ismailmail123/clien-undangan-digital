@@ -26,9 +26,9 @@ const handleLogin = async (e) => {
   
 
   return (
-    <div className="body-loginreg">
-      <div className="login-container">
-        <h2 className="text-center" style={{ color: "#28a745" }}>
+    <div className="body-loginreg bg-body-secondary">
+      <div className="login-container bg-secondary">
+        <h2 className="text-center text-light" >
           Login
         </h2>
         <form onSubmit={handleLogin}>
@@ -65,15 +65,7 @@ const handleLogin = async (e) => {
             </button>
           </div>
           <div className="register-link">
-            <Link to="/register">Belum punya akun? Daftar</Link>
-          </div>
-          <div className="social-buttons">
-            <button type="button" className="btn btn-google btn-social">
-              <i className="fab fa-google"></i>
-            </button>
-            <button type="button" className="btn btn-facebook btn-social">
-              <i className="fab fa-facebook-f"></i>
-            </button>
+            <Link className="text-light" to="/register">Belum punya akun? Daftar</Link>
           </div>
         </form>
       </div>

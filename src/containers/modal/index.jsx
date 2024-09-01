@@ -230,8 +230,10 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
       await updateUser(userId, formData); // Pass userId and formData
       toggleModal();
     } catch (error) {
+      alert("Gagal melakukan pengaturan tema. Silahkan coba kembali!")
       console.error("Error sending data:", error);
       setError("Failed to update user");
+      alert("Gagal melakukan pengaturan tema. Silahkan coba kembali!")
     } finally {
       setIsSubmitting(false);
     }

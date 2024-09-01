@@ -1,11 +1,9 @@
-import React from "react";
 import { Card, Col, Row, Image } from "react-bootstrap";
 import "./invitation.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 AOS.init();
-import background1 from "../../assets/backgound1.png";
 
 function Invitation({ galerie, data }) {
   return (

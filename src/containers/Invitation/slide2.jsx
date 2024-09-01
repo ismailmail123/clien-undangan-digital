@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import "./invitation.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
 
-import weddingone from "../../assets/wedding1.png";
-import background1 from "../../assets/backgound1.png";
 import Clock from "../../containers/Clock/Clock";
 import dayjs from "dayjs";
 

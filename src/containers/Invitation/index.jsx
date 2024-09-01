@@ -13,15 +13,13 @@ import Slide2 from "./slide2";
 import Slide3 from "./slide3";
 import Slide4 from "./slide4";
 import Slide5 from "./slide5";
-import Slide6 from "./slide6";
-import backgroundMusic from "../../assets/audio-backsound.mp3"; // Ganti dengan path musik Anda
+import Slide6 from "./slide6";// Ganti dengan path musik Anda
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import dayjs from "dayjs";
 import "dayjs/locale/id";
 import pengantin from "../../assets/pengantin-kartoon.png";
 import icon from "../../assets/wedding2.png";
-import icon1 from "../../assets/wedding1.png";
 
 function Invitation() {
   const [timerDays, setTimerDays] = useState(0);

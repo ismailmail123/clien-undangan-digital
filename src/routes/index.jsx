@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import EditUndangan from "../containers/EditUndangan";
 import HomePage from "../pages/HomePage";
 import Invitation from "../pages/Invitation";
 import Register from "../containers/Register";
@@ -11,12 +12,17 @@ import EditRecipient from "../containers/EditRecipient";
 import AddRecipient from "../containers/AddRecipient";
 import AddThems from "../containers/AddThems";
 import AddSound from "../containers/AddThems";
+import Search from "../containers/Search";
 
 const index = () => {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePage />,
+    },
+    {
+      path: "/edit",
+      element: <EditUndangan />,
     },
     {
       path: "/invitation/:id",
@@ -57,6 +63,10 @@ const index = () => {
     {
       path: "/addSound",
       element: <AddSound />,
+    },
+    {
+      path: "/search",
+      element: <Search />,
     },
   ]);
 

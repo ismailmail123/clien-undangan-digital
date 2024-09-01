@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Image, Row } from "react-bootstrap";
 import "./invitation.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import swal from "sweetalert";
-import axios from "axios";
-
-import weddingone from "../../assets/wedding1.png";
-import background1 from "../../assets/backgound1.png";
 import cip from "../../assets/cip.jpg";
 import mandiriLogo from "../../assets/mandiri1.png";
 import muamalatLogo from "../../assets/logo_muamalat.png";

@@ -1,30 +1,16 @@
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import "./style.css";
 import "./FormAdd.css";
-import { FaUserEdit } from "react-icons/fa";
-import { FaPhotoFilm } from "react-icons/fa6";
-import {
-  MdOutlineDateRange,
-  MdOutlineMoreTime,
-  MdOutlineSettings,
-} from "react-icons/md";
-import { LuMonitorCheck } from "react-icons/lu";
-import { GiSoundOn } from "react-icons/gi";
-import { LuGift } from "react-icons/lu";
-import { useEffect, useRef, useState } from "react";
-import swal from "sweetalert";
-import { useNavigate, useParams } from "react-router-dom";
+
+import {  useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useRecipientStore from "../../store/useRecipientStore";
-import dayjs from "dayjs";
+import Footer from "../../components/Footer";
 
 
 const Index = () => {
   const { addThem } = useRecipientStore();
-  const [themData, setThemData] = useState({
-    name: "",
-    img_url: "",
-  });
   const [imgPreview, setImgPreview] = useState();
   const [img_url, setImg_url] = useState();
   const [title, setTitle] = useState();
@@ -73,11 +59,12 @@ const Index = () => {
 
     try {
       await addThem(formData); // upload the image and data to the backend
-      alert("Galeri berhasil ditambahkan");
+      alert("Tema berhasil ditambahkan");
       navigate(-1);
     } catch (error) {
       console.error("Error adding galeri:", error);
-      setError("Gagal menambahkan galeri");
+      setError("Gagal menambahkan Tema");
+      alert("Gagal menambahkan tema")
     } finally {
       setIsSubmitting(false); // set submitting to false after completion
     }
@@ -97,7 +84,7 @@ const Index = () => {
                 fontFamily: "Dancing Script, cursive",
               }}
             >
-              Add Recipient
+              Add Thems
             </h4>
             <Col xs="auto" className="colEditcar d-none d-md-block h-100"></Col>
           </div>
@@ -177,6 +164,7 @@ const Index = () => {
           </Form>
         </Container>
       </div>
+      <Footer />
     </>
   );
 };

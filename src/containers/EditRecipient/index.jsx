@@ -1,18 +1,12 @@
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import "./style.css";
 import "./FormEditCard.css";
-import { FaUserEdit } from "react-icons/fa";
-import { FaPhotoFilm } from "react-icons/fa6";
-import { MdOutlineDateRange, MdOutlineMoreTime, MdOutlineSettings } from "react-icons/md";
-import { LuMonitorCheck } from "react-icons/lu";
-import { GiSoundOn } from "react-icons/gi";
-import { LuGift } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import { useNavigate, useParams } from "react-router-dom";
 import useRecipientStore from "../../store/useRecipientStore";
-import dayjs from "dayjs";
+import Footer from "../../components/Footer";
 
 const Index = () => {
   const [name, setName] = useState("");
@@ -115,6 +109,7 @@ const Index = () => {
           </Form>
         </Container>
       </div>
+      <Footer />
     </>
   );
 };
