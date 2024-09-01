@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Container, Image } from "react-bootstrap";
-
-import wedding3 from '../../assets/wedding.jpeg';
 import './invitationHome.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
+import useRecipientStore from "../../store/useRecipientStore";
 // ..
 AOS.init();
 
@@ -16,6 +15,7 @@ function InvitationHome () {
     const [recipients, setRecipients] = useState();
     const token = localStorage.getItem("token");
     const {id} = useParams();
+    const {user, fetchUser} = useRecipientStore();
 
 
     const fetchRecipients = async () => {
@@ -29,7 +29,6 @@ function InvitationHome () {
           }
         );
         setRecipients(response.data.data);
-        console.log("ini data", response.data.data);
       } catch (err) {
         console.log("Data tidak ditemukan", err);
         setRecipients([]); // Set ke array kosong jika terjadi kesalahan
@@ -37,10 +36,10 @@ function InvitationHome () {
     };
   
     useEffect(() => {
+      fetchUser();
       fetchRecipients();
     }, []);
 
-  console.log("recipients", recipients)
     return (
         <>
         <div 
@@ -60,7 +59,7 @@ function InvitationHome () {
                   <Card className="mt-3 mb-3 border-0" style={{height: '100vh'}}>
                   <h4 className="invitation-text">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h4> 
                   <div className="invitation-card">
-                      <Image className="invitation-image"  src={wedding3} />
+                      <Image className="invitation-image"  src={user ? user[0]?.profile_image : "Tamu Undangan"} />
                   </div>
                   <h4 className="text-center description" >Kepada Bapak/Ibu </h4>
                   <h4 className="text-center description" >{recipients ? recipients.name : "Tamu Undangan"}</h4>

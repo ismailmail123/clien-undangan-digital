@@ -16,8 +16,7 @@ function Invitation({ user, data }) {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/responses`);
-      console.log("Response data:", response.data.data); // Tambahkan log ini
+      const response = await axios.get(`http://localhost:3000/api/responses`);// Tambahkan log ini
       setResponse(response.data.data);
     } catch (err) {
       console.log("Data tidak ditemukan", err);
@@ -30,7 +29,6 @@ function Invitation({ user, data }) {
   }, []);
 
   useEffect(() => {
-    console.log("Updated response state:", response); // Tambahkan log ini
   }, [response]);
 
   const capitalizeFirstLetter = (string) => {
@@ -92,7 +90,7 @@ function Invitation({ user, data }) {
               {response &&
                 response.map((response) => (
                   <>
-      <Card style={{ border: "1px solid", marginBottom: "5px", flexShrink: 0 }}>
+      <Card key={response.id} style={{ border: "1px solid", marginBottom: "5px", flexShrink: 0 }}>
         <Card.Body className="pt-1">
           <Card.Title className="fw-bold m-0">
             {capitalizeFirstLetter(response.name)}

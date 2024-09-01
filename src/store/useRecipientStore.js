@@ -96,7 +96,6 @@ const useRecipientStore = create((set, get) => ({
                 },
             });
             set({ user: response.data.data });
-            console.log("Fetched wedding successfully:", response.data.data);
         } catch (error) {
             console.error("Fetch wedding error:", error);
         }
@@ -281,7 +280,6 @@ const useRecipientStore = create((set, get) => ({
                 },
             });
             set({ weddings: response.data.data });
-            console.log("Fetched wedding successfully:", response.data.data);
         } catch (error) {
             console.error("Fetch wedding error:", error);
         }
@@ -348,7 +346,6 @@ const useRecipientStore = create((set, get) => ({
                 },
             });
             set({ sounds: response.data.data });
-            console.log("Fetched sound successfully:", response.data.data);
         } catch (error) {
             console.error("Fetch sound error:", error);
         }
@@ -390,7 +387,6 @@ const useRecipientStore = create((set, get) => ({
                 },
             });
             set({ thems: response.data.data });
-            console.log("Fetched sound successfully:", response.data.data);
         } catch (error) {
             console.error("Fetch sound error:", error);
         }
@@ -433,7 +429,6 @@ const useRecipientStore = create((set, get) => ({
                 },
             });
             set({ galeries: response.data.data });
-            console.log("Fetched sound successfully:", response.data.data);
         } catch (error) {
             console.error("Fetch sound error:", error);
         }
@@ -477,7 +472,6 @@ const useRecipientStore = create((set, get) => ({
                 },
             });
             set({ cards: response.data.data });
-            console.log("Fetched cardpayment successfully:", response.data.data);
         } catch (error) {
             console.error("Fetch cardpayment error:", error);
         }

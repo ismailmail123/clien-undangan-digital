@@ -90,8 +90,6 @@ function Invitation() {
       if (response.data.data.user.wedding.date) {
         setCountDownDate(response.data.data.user.wedding.date);
       }
-
-      console.log("ini dataaaaaaaaa", response.data.data);
     } catch (err) {
       console.log("Data tidak ditemukan", err);
       setData([]);

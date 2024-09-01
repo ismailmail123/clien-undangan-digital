@@ -29,7 +29,6 @@ function Invitation({ data1, user }) {
       });
   };
 
-  console.log("slide 3", user)
   function getLogoByTitle(title) {
     switch (title) {
       case "mandiri":

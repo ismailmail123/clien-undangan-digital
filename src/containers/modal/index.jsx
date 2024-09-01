@@ -72,7 +72,6 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
     fetchCardById();
   }, []);
 
-  console.log("ini cards", cards);
 
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
@@ -129,15 +128,11 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
     setIsSubmitting(true);
 
     try {
-      console.log("Weddings Array:", weddings);
-      console.log("Wedding Data User ID:", userId);
 
       // Cari data wedding yang sudah ada berdasarkan user_id
       const existingWedding = weddings.find(
         (wedding) => String(wedding.user_id) === String(userId)
       );
-
-      console.log("Existing Wedding Found:", existingWedding);
 
       if (existingWedding) {
         // Ambil ID pernikahan yang sudah ada
@@ -228,6 +223,7 @@ const Modal1 = ({ isOpen, toggleModal, modalType }) => {
 
       // Assuming updateUser expects formData as input
       await updateUser(userId, formData); // Pass userId and formData
+      alert("Data berhasil diperbarui")
       toggleModal();
     } catch (error) {
       alert("Gagal melakukan pengaturan tema. Silahkan coba kembali!")

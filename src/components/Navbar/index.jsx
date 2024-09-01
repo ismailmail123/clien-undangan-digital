@@ -35,7 +35,6 @@ function OffcanvasExample() {
     fetchUser();
   },[])
 
-  console.log("user", user)
   const handleLogout = () => {
     logout();
     navigate("/");
