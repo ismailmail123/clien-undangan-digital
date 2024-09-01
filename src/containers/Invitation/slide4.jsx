@@ -16,7 +16,7 @@ function Invitation({ data }) {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/responses`,
+        `http://104.154.222.145/api/responses`,
         data
       );
       setResponse(response.data);
