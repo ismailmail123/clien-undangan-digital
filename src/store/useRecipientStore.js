@@ -18,7 +18,7 @@ const useRecipientStore = create((set, get) => ({
     register: async(userData, navigate, setError) => {
         try {
             const response = await axios.post(
-                "http://104.154.222.145/api/auth/register",
+                "https://api-invitation.xyz/api/auth/register",
                 userData
             );
             const data = response.data;
@@ -50,7 +50,7 @@ const useRecipientStore = create((set, get) => ({
     login: async(credentials, navigate, setError) => {
         try {
             const response = await axios.post(
-                "http://104.154.222.145/api/auth/login",
+                "https://api-invitation.xyz/api/auth/login",
                 credentials
             );
             const data = response.data;
@@ -90,7 +90,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/users", {
+            const response = await axios.get("https://api-invitation.xyz/api/users", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -108,7 +108,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get(`http://104.154.222.145/api/users/${id}`
+            const response = await axios.get(`https://api-invitation.xyz/api/users/${id}`
 
             );
             return response.data.data;
@@ -126,7 +126,7 @@ const useRecipientStore = create((set, get) => ({
             }
 
             // Pastikan ID valid dan digunakan sebagai bagian dari URL
-            const response = await axios.put(`http://104.154.222.145/api/users/${id}`, userData, {
+            const response = await axios.put(`https://api-invitation.xyz/api/users/${id}`, userData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -149,7 +149,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/recipients", {
+            const response = await axios.get("https://api-invitation.xyz/api/recipients", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -169,7 +169,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get(`http://104.154.222.145/api/recipients/${id}`
+            const response = await axios.get(`https://api-invitation.xyz/api/recipients/${id}`
 
             );
             return response.data.data;
@@ -186,7 +186,7 @@ const useRecipientStore = create((set, get) => ({
         }
 
         try {
-            const response = await axios.post("http://104.154.222.145/api/recipients", recipientData, {
+            const response = await axios.post("https://api-invitation.xyz/api/recipients", recipientData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
@@ -209,7 +209,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.put(`http://104.154.222.145/api/recipients/${id}`, recipientData, {
+            const response = await axios.put(`https://api-invitation.xyz/api/recipients/${id}`, recipientData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 },
@@ -229,7 +229,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.put(`http://104.154.222.145/api/recipients/${id}/status`, recipientStatusData, {
+            const response = await axios.put(`https://api-invitation.xyz/api/recipients/${id}/status`, recipientStatusData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 },
@@ -251,7 +251,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.delete(`http://104.154.222.145/api/recipients/${recipientId}`, {
+            const response = await axios.delete(`https://api-invitation.xyz/api/recipients/${recipientId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -274,7 +274,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/weddings", {
+            const response = await axios.get("https://api-invitation.xyz/api/weddings", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -293,7 +293,7 @@ const useRecipientStore = create((set, get) => ({
         }
 
         try {
-            const response = await axios.post("http://104.154.222.145/api/weddings", weddingData, {
+            const response = await axios.post("https://api-invitation.xyz/api/weddings", weddingData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
@@ -317,7 +317,7 @@ const useRecipientStore = create((set, get) => ({
             }
 
             // Pastikan ID valid dan digunakan sebagai bagian dari URL
-            const response = await axios.put(`http://104.154.222.145/api/weddings/${id}`, weddingData, {
+            const response = await axios.put(`https://api-invitation.xyz/api/weddings/${id}`, weddingData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -340,7 +340,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/sounds", {
+            const response = await axios.get("https://api-invitation.xyz/api/sounds", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -359,7 +359,7 @@ const useRecipientStore = create((set, get) => ({
         }
 
         try {
-            const response = await axios.post("http://104.154.222.145/api/sounds", soundData, {
+            const response = await axios.post("https://api-invitation.xyz/api/sounds", soundData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
@@ -381,7 +381,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/thems", {
+            const response = await axios.get("https://api-invitation.xyz/api/thems", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -400,7 +400,7 @@ const useRecipientStore = create((set, get) => ({
         }
 
         try {
-            const response = await axios.post("http://104.154.222.145/api/thems", themData, {
+            const response = await axios.post("https://api-invitation.xyz/api/thems", themData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }
@@ -423,7 +423,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/galeries", {
+            const response = await axios.get("https://api-invitation.xyz/api/galeries", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -442,7 +442,7 @@ const useRecipientStore = create((set, get) => ({
         }
 
         try {
-            const response = await axios.post("http://104.154.222.145/api/galeries", galeriData, {
+            const response = await axios.post("https://api-invitation.xyz/api/galeries", galeriData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
@@ -466,7 +466,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get("http://104.154.222.145/api/cardpayments", {
+            const response = await axios.get("https://api-invitation.xyz/api/cardpayments", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -485,7 +485,7 @@ const useRecipientStore = create((set, get) => ({
                 return;
             }
 
-            const response = await axios.get(`http://104.154.222.145/api/cardpayments/${id}`
+            const response = await axios.get(`https://api-invitation.xyz/api/cardpayments/${id}`
 
             );
             return response.data.data;
@@ -503,7 +503,7 @@ const useRecipientStore = create((set, get) => ({
             }
 
             // Pastikan ID valid dan digunakan sebagai bagian dari URL
-            const response = await axios.put(`http://104.154.222.145/api/cardpayments/${id}`, cardData, {
+            const response = await axios.put(`https://api-invitation.xyz/api/cardpayments/${id}`, cardData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -526,7 +526,7 @@ const useRecipientStore = create((set, get) => ({
         }
 
         try {
-            const response = await axios.post("http://104.154.222.145/api/cardpayments", cardData, {
+            const response = await axios.post("https://api-invitation.xyz/api/cardpayments", cardData, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 }

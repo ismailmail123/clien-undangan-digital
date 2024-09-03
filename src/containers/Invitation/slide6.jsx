@@ -16,7 +16,7 @@ function Invitation({ user, data }) {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`http://104.154.222.145/api/responses`);// Tambahkan log ini
+      const response = await axios.get(`https://api-invitation.xyz/api/responses`);// Tambahkan log ini
       setResponse(response.data.data);
     } catch (err) {
       console.log("Data tidak ditemukan", err);

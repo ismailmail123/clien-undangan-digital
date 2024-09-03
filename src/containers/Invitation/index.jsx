@@ -83,7 +83,7 @@ function Invitation() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(`http://104.154.222.145/api/recipients/${id}`);
+      const response = await axios.get(`https://api-invitation.xyz/api/recipients/${id}`);
       setData(response.data.data);
 
       // Ambil tanggal pernikahan dari data API dan set sebagai countDownDate

@@ -21,7 +21,7 @@ function InvitationHome () {
     const fetchRecipients = async () => {
       try {
         const response = await axios.get(
-          `http://104.154.222.145/api/recipients/${id}`,
+          `https://api-invitation.xyz/api/recipients/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
